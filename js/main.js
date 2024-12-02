@@ -217,3 +217,34 @@ function handleImport() {
     
     reader.readAsArrayBuffer(file);
 }
+
+// Week Change Handler
+function handleWeekChange() {
+    const selectedWeek = weekSelect.value;
+    displayWeekData(selectedWeek);
+    updatePayPeriodInfo();
+}
+
+// Save Week Handler
+function handleSaveWeek() {
+    const weekString = weekSelect.value;
+    if (!weekString) {
+        alert('Please select a week first!');
+        return;
+    }
+    
+    saveCurrentWeek();
+    updateWeeksList();
+    alert('Week saved successfully!');
+}
+
+// Week Search Handler
+function handleWeekSearch() {
+    const searchTerm = weekSearch.value.toLowerCase();
+    const weekDivs = weeksList.getElementsByTagName('div');
+    
+    Array.from(weekDivs).forEach(div => {
+        const weekText = div.textContent.toLowerCase();
+        div.style.display = weekText.includes(searchTerm) ? 'block' : 'none';
+    });
+} 
