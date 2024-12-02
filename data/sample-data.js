@@ -1,4 +1,3 @@
-// Sample data for testing the Production Tracker
 const sampleData = {
     // Example week 1
     "2024-W10": [
@@ -52,4 +51,4 @@ const sampleData = {
 // Load sample data if no saved data exists
 if (!localStorage.getItem('savedWeeks')) {
     localStorage.setItem('savedWeeks', JSON.stringify(sampleData));
-}
+} 
